@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nail Technician Hiring Guide – BeYOUtiful Nails 705</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #fdf8f4;
+    --blush: #e8c4b8;
+    --rose: #c97b6e;
+    --mauve: #9b6b72;
+    --deep: #3a2228;
+    --gold: #c9a96e;
+    --green: #4a7c59;
+    --amber: #c97b2e;
+    --red: #b04040;
+    --card-bg: #ffffff;
+    --shadow: 0 4px 32px rgba(58,34,40,0.08);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--deep);
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  header {
+    background: var(--deep);
+    padding: 48px 32px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 50%, rgba(201,123,110,0.18) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 50%, rgba(155,107,114,0.15) 0%, transparent 60%);
+  }
+  header .eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--blush);
+    opacity: 0.8;
+    margin-bottom: 12px;
+    position: relative;
+  }
+  header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.2;
+    position: relative;
+  }
+  header h1 em {
+    color: var(--blush);
+    font-style: italic;
+  }
+  header p {
+    margin-top: 14px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.55);
+    font-weight: 300;
+    position: relative;
+  }
+
+  /* NAV TABS */
+  .tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    background: var(--deep);
+    padding: 0 32px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    overflow-x: auto;
+  }
+  .tab-btn {
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    padding: 14px 22px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.45);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s;
+    letter-spacing: 0.5px;
+  }
+  .tab-btn:hover { color: rgba(255,255,255,0.75); }
+  .tab-btn.active { color: var(--blush); border-bottom-color: var(--blush); }
+
+  /* MAIN */
+  main { max-width: 860px; margin: 0 auto; padding: 40px 20px 80px; }
+
+  .section { display: none; animation: fadeUp 0.35s ease; }
+  .section.active { display: block; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* CANDIDATE CARDS */
+  .candidate-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    margin-bottom: 28px;
+    overflow: hidden;
+    border-top: 5px solid var(--green);
+  }
+  .candidate-card.normal { border-top-color: var(--gold); }
+  .candidate-card.worst { border-top-color: var(--red); }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 24px 28px 20px;
+    border-bottom: 1px solid rgba(58,34,40,0.07);
+  }
+  .badge {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+  .badge.ideal { background: #eaf4ee; }
+  .badge.normal { background: #fdf4e3; }
+  .badge.worst { background: #fdeaea; }
+
+  .card-header-text h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--deep);
+  }
+  .card-header-text .subtitle {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-top: 3px;
+  }
+  .subtitle.ideal { color: var(--green); }
+  .subtitle.normal { color: var(--amber); }
+  .subtitle.worst { color: var(--red); }
+
+  .card-body { padding: 24px 28px; }
+
+  .traits-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  @media (max-width: 560px) { .traits-grid { grid-template-columns: 1fr; } }
+
+  .trait {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background: var(--cream);
+    border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .trait-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+  .trait-text { font-size: 13.5px; line-height: 1.5; color: var(--deep); }
+  .trait-text strong { font-weight: 500; display: block; font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; opacity: 0.55; margin-bottom: 2px; }
+
+  .summary-box {
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-size: 13.5px;
+    line-height: 1.6;
+    font-style: italic;
+  }
+  .summary-box.ideal { background: #eaf4ee; color: #2d5a3d; border-left: 3px solid var(--green); }
+  .summary-box.normal { background: #fdf4e3; color: #7a5020; border-left: 3px solid var(--gold); }
+  .summary-box.worst { background: #fdeaea; color: #7a2020; border-left: 3px solid var(--red); }
+
+  /* INTERVIEW QUESTIONS */
+  .q-card {
+    background: var(--card-bg);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    margin-bottom: 22px;
+    overflow: hidden;
+  }
+  .q-header {
+    padding: 18px 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .q-num {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--deep);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .q-text { flex: 1; }
+  .q-text h3 { font-size: 15px; font-weight: 500; line-height: 1.45; color: var(--deep); }
+  .q-text .q-category {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--mauve);
+    margin-top: 4px;
+    font-weight: 500;
+  }
+  .q-toggle { font-size: 18px; color: var(--mauve); transition: transform 0.25s; flex-shrink: 0; margin-top: 4px; }
+  .q-card.open .q-toggle { transform: rotate(180deg); }
+
+  .q-answers { display: none; padding: 0 24px 20px; }
+  .q-card.open .q-answers { display: block; }
+
+  .answer-block {
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    font-size: 13.5px;
+    line-height: 1.65;
+  }
+  .answer-block:last-child { margin-bottom: 0; }
+
+  .answer-block .answer-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .answer-block.ideal-ans { background: #eaf4ee; }
+  .answer-block.ideal-ans .answer-label { color: var(--green); }
+  .answer-block.normal-ans { background: #fdf4e3; }
+  .answer-block.normal-ans .answer-label { color: var(--amber); }
+  .answer-block.red-ans { background: #fdeaea; }
+  .answer-block.red-ans .answer-label { color: var(--red); }
+
+  /* RED FLAGS */
+  .redflags-section { margin-top: 8px; }
+  .rf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 20px; }
+  @media (max-width: 560px) { .rf-grid { grid-template-columns: 1fr; } }
+
+  .rf-card {
+    background: #fdeaea;
+    border-radius: 12px;
+    padding: 18px;
+    border-left: 4px solid var(--red);
+  }
+  .rf-card h4 { font-size: 14px; font-weight: 500; color: #7a2020; margin-bottom: 6px; }
+  .rf-card p { font-size: 13px; color: #9a3030; line-height: 1.5; }
+
+  .gf-card {
+    background: #eaf4ee;
+    border-radius: 12px;
+    padding: 18px;
+    border-left: 4px solid var(--green);
+  }
+  .gf-card h4 { font-size: 14px; font-weight: 500; color: #2d5a3d; margin-bottom: 6px; }
+  .gf-card p { font-size: 13px; color: #3d7a50; line-height: 1.5; }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--deep);
+    margin-bottom: 6px;
+  }
+  .section-sub {
+    font-size: 13.5px;
+    color: var(--mauve);
+    margin-bottom: 28px;
+    line-height: 1.6;
+  }
+  .divider {
+    height: 1px;
+    background: linear-gradient(to right, var(--blush), transparent);
+    margin: 32px 0;
+  }
+
+  /* ===== PREVIEW MODE STYLES ===== */
+  .preview-banner {
+    background: linear-gradient(135deg, #3a2228 0%, #5a2a35 100%);
+    color: #fff;
+    text-align: center;
+    padding: 16px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .preview-banner span { color: var(--blush); font-weight: 600; }
+
+  .blurred-section {
+    position: relative;
+    filter: blur(6px);
+    -webkit-filter: blur(6px);
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  .lock-overlay {
+    position: relative;
+    margin: -20px 0 30px 0;
+  }
+  .lock-overlay-inner {
+    background: linear-gradient(135deg, rgba(58,34,40,0.95), rgba(155,107,114,0.92));
+    border-radius: 16px;
+    padding: 36px 28px;
+    text-align: center;
+    box-shadow: 0 8px 40px rgba(58,34,40,0.2);
+    position: relative;
+    z-index: 10;
+  }
+  .lock-icon { font-size: 36px; margin-bottom: 12px; }
+  .lock-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    color: #fff;
+    font-weight: 400;
+    margin-bottom: 8px;
+  }
+  .lock-sub {
+    font-size: 13px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.6;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  /* Disable text selection globally */
+  body {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+</style>
+</head>
+<body>
+
+<div class="preview-banner">
+  🔒 <span>PREVIEW MODE</span> — This content is protected under a Content License Agreement. Unauthorized use, copying, or reproduction is prohibited.
+</div>
+
+<header>
+  <div class="eyebrow">BeYOUtiful Nails 705 · North Bay, ON</div>
+  <h1>Nail Technician <em>Hiring Guide</em></h1>
+  <p>Candidate profiles, characteristics & interview questions with near-ideal answers</p>
+</header>
+
+<div class="tabs">
+  <button class="tab-btn active" onclick="showTab('candidates', this)">Candidate Profiles</button>
+  <button class="tab-btn" onclick="showTab('questions', this)">Interview Questions</button>
+  <button class="tab-btn" onclick="showTab('flags', this)">Green & Red Flags</button>
+</div>
+
+<main>
+
+  <!-- CANDIDATES TAB -->
+  <div class="section active" id="candidates">
+    <p class="section-title">Three Candidate Profiles</p>
+    <p class="section-sub">Use these profiles to benchmark real applicants. Not every candidate will be perfect — knowing what "good enough" looks like is just as important as knowing what "ideal" looks like.</p>
+
+    <!-- IDEAL -->
+    <div class="candidate-card">
+      <div class="card-header">
+        <div class="badge ideal">💎</div>
+        <div class="card-header-text">
+          <h2>The Ideal Candidate</h2>
+          <div class="subtitle ideal">Hire Immediately</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="traits-grid">
+          <div class="trait"><span class="trait-icon">🎓</span><div class="trait-text"><strong>Certification</strong>Holds a valid Ontario nail technician licence from an accredited cosmetology school</div></div>
+          <div class="trait"><span class="trait-icon">⏳</span><div class="trait-text"><strong>Experience</strong>3–5+ years hands-on experience including acrylics, gel, dip powder, nail art, and pedicures</div></div>
+          <div class="trait"><span class="trait-icon">📱</span><div class="trait-text"><strong>Portfolio</strong>Maintains an active Instagram or TikTok with their own nail work — consistent, creative, clean</div></div>
+          <div class="trait"><span class="trait-icon">🧼</span><div class="trait-text"><strong>Sanitation</strong>Knowledgeable about sterilization, EPA-registered disinfectants, and Ontario health standards</div></div>
+          <div class="trait"><span class="trait-icon">💬</span><div class="trait-text"><strong>Client Relations</strong>Warm, professional, and able to manage client expectations during consultations</div></div>
+          <div class="trait"><span class="trait-icon">📅</span><div class="trait-text"><strong>Reliability</strong>Punctual, consistent, rarely cancels — understands that no-shows cost the business</div></div>
+          <div class="trait"><span class="trait-icon">🌱</span><div class="trait-text"><strong>Growth Mindset</strong>Takes courses, watches tutorials, keeps up with nail trends and seasonal designs</div></div>
+          <div class="trait"><span class="trait-icon">🤝</span><div class="trait-text"><strong>Team Player</strong>Respectful of shared workspace, supports colleagues, communicates openly with management</div></div>
+        </div>
+        <div class="summary-box ideal">
+          "This candidate walks in with a physical portfolio, speaks confidently about technique, asks thoughtful questions about your clients and workflow, and is already active in the nail community online. They treat the interview like a professional consultation — not just a job application."
+        </div>
+      </div>
+    </div>
+
+    <!-- NORMAL - BLURRED FOR PREVIEW -->
+    <div class="blurred-section">
+    <div class="candidate-card normal">
+      <div class="card-header">
+        <div class="badge normal">🌸</div>
+        <div class="card-header-text">
+          <h2>The Average Candidate</h2>
+          <div class="subtitle normal">Hire With Training & Trial Period</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="traits-grid">
+          <div class="trait"><span class="trait-icon">🎓</span><div class="trait-text"><strong>Certification</strong>Has or is close to completing their Ontario nail technician licence</div></div>
+          <div class="trait"><span class="trait-icon">⏳</span><div class="trait-text"><strong>Experience</strong>1–2 years experience, mostly basic manicures and gel. Limited nail art confidence</div></div>
+          <div class="trait"><span class="trait-icon">📱</span><div class="trait-text"><strong>Portfolio</strong>Has some photos on their phone but no dedicated social media presence for their work</div></div>
+          <div class="trait"><span class="trait-icon">🧼</span><div class="trait-text"><strong>Sanitation</strong>Knows the basics but may need a refresher on your specific protocols and products</div></div>
+          <div class="trait"><span class="trait-icon">💬</span><div class="trait-text"><strong>Client Relations</strong>Friendly and well-meaning but may struggle with difficult or indecisive clients</div></div>
+          <div class="trait"><span class="trait-icon">📅</span><div class="trait-text"><strong>Reliability</strong>Generally reliable but may need clear structure and reminders around scheduling expectations</div></div>
+          <div class="trait"><span class="trait-icon">🌱</span><div class="trait-text"><strong>Growth Mindset</strong>Open to learning but not yet proactively seeking out courses or staying on top of trends</div></div>
+          <div class="trait"><span class="trait-icon">🤝</span><div class="trait-text"><strong>Team Player</strong>Gets along with others but may need guidance on workplace boundaries and communication</div></div>
+        </div>
+        <div class="summary-box normal">
+          "This candidate has the foundation to grow into a great nail tech, but they need mentoring, clear expectations, and a structured trial period of 30–60 days. They are not ready to work independently from day one, but with the right environment they could become a loyal long-term team member."
+        </div>
+      </div>
+    </div>
+
+    </div><!-- end blurred normal -->
+
+    <!-- WORST - BLURRED FOR PREVIEW -->
+    <div class="blurred-section">
+    <div class="candidate-card worst">
+      <div class="card-header">
+        <div class="badge worst">⚠️</div>
+        <div class="card-header-text">
+          <h2>The Problem Candidate</h2>
+          <div class="subtitle worst">Do Not Hire — Walk Away</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="traits-grid">
+          <div class="trait"><span class="trait-icon">🎓</span><div class="trait-text"><strong>Certification</strong>Cannot provide proof of certification or claims it's "somewhere at home" — vague about their training</div></div>
+          <div class="trait"><span class="trait-icon">⏳</span><div class="trait-text"><strong>Experience</strong>Overstates their experience with no verifiable proof or references to back it up</div></div>
+          <div class="trait"><span class="trait-icon">📱</span><div class="trait-text"><strong>Portfolio</strong>No portfolio whatsoever — or shows images that are clearly downloaded, not their own work</div></div>
+          <div class="trait"><span class="trait-icon">🧼</span><div class="trait-text"><strong>Sanitation</strong>Dismissive about hygiene standards — "I've never had a complaint" as a substitute for proper practice</div></div>
+          <div class="trait"><span class="trait-icon">💬</span><div class="trait-text"><strong>Client Relations</strong>Speaks negatively about past clients or former employers during the interview</div></div>
+          <div class="trait"><span class="trait-icon">📅</span><div class="trait-text"><strong>Reliability</strong>History of late arrivals, no-shows, or vague answers about why they left previous positions</div></div>
+          <div class="trait"><span class="trait-icon">🌱</span><div class="trait-text"><strong>Growth Mindset</strong>Resistant to feedback — "I've been doing it this way for years and it works fine"</div></div>
+          <div class="trait"><span class="trait-icon">🤝</span><div class="trait-text"><strong>Team Player</strong>Immediately asks about commission splits, days off, and flexibility before asking about clients or the role</div></div>
+        </div>
+        <div class="summary-box worst">
+          "This candidate is a liability risk. Uncertified or unable to prove certification, dismissive of sanitation standards, and showing early signs of entitlement or negativity. One bad sanitation incident or a client complaint about poor work reflects directly on BeYOUtiful Nails 705 — trust your gut and pass."
+        </div>
+      </div>
+    </div>
+    </div><!-- end blurred worst -->
+
+    <div class="lock-overlay"><div class="lock-overlay-inner">
+      <div class="lock-icon">🔒</div>
+      <div class="lock-title">2 More Candidate Profiles Locked</div>
+      <div class="lock-sub">The Average Candidate and Problem Candidate profiles are included in the full Hiring Kit. Purchase to unlock all profiles, interview answers, and red/green flag guides.</div>
+    </div></div>
+
+  </div>
+  <div class="section" id="questions">
+    <p class="section-title">Interview Questions & Answers</p>
+    <p class="section-sub">Click any question to expand the ideal, average, and red-flag answers. Use these to quickly evaluate where a candidate lands during the real interview.</p>
+
+    <div class="q-card" onclick="toggleQ(this)">
+      <div class="q-header">
+        <div class="q-num">1</div>
+        <div class="q-text">
+          <h3>Can you walk me through the nail services you're most confident performing?</h3>
+          <div class="q-category">Skills & Experience</div>
+        </div>
+        <div class="q-toggle">▾</div>
+      </div>
+      <div class="q-answers">
+        <div class="answer-block ideal-ans">
+          <div class="answer-label">💎 Ideal Answer</div>
+          "I'm most confident with full sets of acrylics, hard gel, and builder gel overlays. I also do gel manicures with nail art — I've been practicing ombre, chrome powder, and 3D designs for the past year. I can do pedicures including callus removal, and I'm comfortable with dip powder as well. I brought some photos if you'd like to see."
+        </div>
+        <div class="answer-block normal-ans">
+          <div class="answer-label">🌸 Average Answer</div>
+          "I'm good at regular gel manicures and basic acrylics. I'm still learning nail art but I'm working on it. I've done pedicures too, mostly in school and during my apprenticeship."
+        </div>
+        <div class="answer-block red-ans">
+          <div class="answer-label">⚠️ Red Flag Answer</div>
+          "I can do everything — nails, acrylics, whatever you need." (No specifics, no portfolio, vague confidence without substance.)
+        </div>
+      </div>
+    </div>
+
+    <!-- QUESTIONS 2-7 BLURRED FOR PREVIEW -->
+    <div class="blurred-section">
+    <div class="q-card" onclick="toggleQ(this)">
+      <div class="q-header">
+        <div class="q-num">2</div>
+        <div class="q-text">
+          <h3>How do you keep your station and tools sanitized between clients?</h3>
+          <div class="q-category">Health & Safety</div>
+        </div>
+        <div class="q-toggle">▾</div>
+      </div>
+      <div class="q-answers">
+        <div class="answer-block ideal-ans">
+          <div class="answer-label">💎 Ideal Answer</div>
+          "After every client I remove all single-use items, wipe down my station with an EPA-registered disinfectant, and put metal tools through a proper wet disinfection process — I use barbicide or similar for the required contact time. Any files or buffers that can't be disinfected properly get tossed. I also wash my hands between every client and wear gloves when needed."
+        </div>
+        <div class="answer-block normal-ans">
+          <div class="answer-label">🌸 Average Answer</div>
+          "I wipe everything down with disinfectant spray and use new files for each client. I know sanitation is really important so I try to be careful."
+        </div>
+        <div class="answer-block red-ans">
+          <div class="answer-label">⚠️ Red Flag Answer</div>
+          "I clean everything between clients — I've never had anyone get an infection so I must be doing it right." (No process, no awareness of protocols, using results as a substitute for standards.)
+        </div>
+      </div>
+    </div>
+
+    <div class="q-card" onclick="toggleQ(this)">
+      <div class="q-header">
+        <div class="q-num">3</div>
+        <div class="q-text">
+          <h3>Tell me about a time a client wasn't happy with their nails. What happened and how did you handle it?</h3>
+          <div class="q-category">Client Relations & Problem Solving</div>
+        </div>
+        <div class="q-toggle">▾</div>
+      </div>
+      <div class="q-answers">
+        <div class="answer-block ideal-ans">
+          <div class="answer-label">💎 Ideal Answer</div>
+          "A client came back saying her gel had lifted on two nails after three days. I apologized, looked at the nails, and did a complimentary fix right away. Afterwards I asked her some questions and realized she'd been using hand sanitizer heavily — I hadn't mentioned that as a caution beforehand. I've made sure to include aftercare instructions in every appointment since then."
+        </div>
+        <div class="answer-block normal-ans">
+          <div class="answer-label">🌸 Average Answer</div>
+          "I've had a client who didn't like the colour after she got home. I told her to come back in and we changed it. She was happy after that."
+        </div>
+        <div class="answer-block red-ans">
+          <div class="answer-label">⚠️ Red Flag Answer</div>
+          "Honestly most of my clients have been happy. If someone complains it's usually because they didn't take care of their nails properly." (Deflects blame to client — major concern for customer retention.)
+        </div>
+      </div>
+    </div>
+
+    <div class="q-card" onclick="toggleQ(this)">
+      <div class="q-header">
+        <div class="q-num">4</div>
+        <div class="q-text">
+          <h3>How do you stay current with nail trends and new techniques?</h3>
+          <div class="q-category">Growth & Learning</div>
+        </div>
+        <div class="q-toggle">▾</div>
+      </div>
+      <div class="q-answers">
+        <div class="answer-block ideal-ans">
+          <div class="answer-label">💎 Ideal Answer</div>
+          "I follow a lot of nail artists on Instagram and TikTok — I pay attention to what's trending seasonally. I also took an advanced nail art course last year and I'm looking at a gel sculpting course for this spring. I try to practice new techniques on myself or friends before offering them to clients."
+        </div>
+        <div class="answer-block normal-ans">
+          <div class="answer-label">🌸 Average Answer</div>
+          "I follow some nail accounts online and try to keep up with what clients are asking for. I haven't done any extra courses yet but I'd be open to it."
+        </div>
+        <div class="answer-block red-ans">
+          <div class="answer-label">⚠️ Red Flag Answer</div>
+          "I've been doing nails for a while so I pretty much know what works. Trends come and go." (Closed to growth — will fall behind in a trend-driven industry.)
+        </div>
+      </div>
+    </div>
+
+    <div class="q-card" onclick="toggleQ(this)">
+      <div class="q-header">
+        <div class="q-num">5</div>
+        <div class="q-text">
+          <h3>This is a small woman-owned business in North Bay. How do you feel about working in a tight-knit team environment?</h3>
+          <div class="q-category">Culture Fit & Attitude</div>
+        </div>
+        <div class="q-toggle">▾</div>
+      </div>
+      <div class="q-answers">
+        <div class="answer-block ideal-ans">
+          <div class="answer-label">💎 Ideal Answer</div>
+          "That's actually exactly what I'm looking for. I've worked in a bigger salon before and honestly I prefer a smaller environment where there's real communication and you're not just a number. I think the client relationships are more meaningful too — people become regulars, not just appointments."
+        </div>
+        <div class="answer-block normal-ans">
+          <div class="answer-label">🌸 Average Answer</div>
+          "I think that sounds nice. I get along well with people and I don't mind working closely with others."
+        </div>
+        <div class="answer-block red-ans">
+          <div class="answer-label">⚠️ Red Flag Answer</div>
+          "As long as everyone does their own thing and stays out of my space I'm fine." (Low team compatibility — likely to create friction in a small studio environment.)
+        </div>
+      </div>
+    </div>
+
+    <div class="q-card" onclick="toggleQ(this)">
+      <div class="q-header">
+        <div class="q-num">6</div>
+        <div class="q-text">
+          <h3>What would you do if you noticed a client had signs of a nail fungus or skin infection when they came in for their appointment?</h3>
+          <div class="q-category">Professional Judgment</div>
+        </div>
+        <div class="q-toggle">▾</div>
+      </div>
+      <div class="q-answers">
+        <div class="answer-block ideal-ans">
+          <div class="answer-label">💎 Ideal Answer</div>
+          "I would politely and privately let the client know what I'm seeing and explain that I'm not able to perform the service on an affected area — it's for their safety and other clients' too. I'd recommend they see a doctor and let them know they're welcome to rebook once it's cleared. I'd document it in case there's any follow-up needed."
+        </div>
+        <div class="answer-block normal-ans">
+          <div class="answer-label">🌸 Average Answer</div>
+          "I would tell them I can't do their nails until it's looked at by a doctor. I'd try to be nice about it so they don't feel embarrassed."
+        </div>
+        <div class="answer-block red-ans">
+          <div class="answer-label">⚠️ Red Flag Answer</div>
+          "I'd probably just avoid that area and do the rest of the nails." (This is both a health code violation and a liability — immediate disqualifier.)
+        </div>
+      </div>
+    </div>
+
+    <div class="q-card" onclick="toggleQ(this)">
+      <div class="q-header">
+        <div class="q-num">7</div>
+        <div class="q-text">
+          <h3>Do you have references from previous salons or clients we can contact?</h3>
+          <div class="q-category">Verification & Trust</div>
+        </div>
+        <div class="q-toggle">▾</div>
+      </div>
+      <div class="q-answers">
+        <div class="answer-block ideal-ans">
+          <div class="answer-label">💎 Ideal Answer</div>
+          "Yes, absolutely. I have two former salon managers and a few long-term clients who said they'd be happy to speak on my behalf. I also have Google reviews from clients I've served if that helps. Here's my contact sheet."
+        </div>
+        <div class="answer-block normal-ans">
+          <div class="answer-label">🌸 Average Answer</div>
+          "I have one reference from my last salon — I can get you the number. I don't have clients who've formally agreed but I could ask a couple."
+        </div>
+        <div class="answer-block red-ans">
+          <div class="answer-label">⚠️ Red Flag Answer</div>
+          "I don't really keep in touch with my old bosses. We didn't end on the best terms." (No references + conflict history = significant risk.)
+        </div>
+      </div>
+    </div>
+    </div><!-- end blurred questions -->
+
+    <div class="lock-overlay"><div class="lock-overlay-inner">
+      <div class="lock-icon">🔒</div>
+      <div class="lock-title">6 More Interview Questions Locked</div>
+      <div class="lock-sub">Questions covering Health & Safety, Client Relations, Growth & Learning, Culture Fit, Professional Judgment, and Verification — each with ideal, average, and red-flag answer benchmarks.</div>
+    </div></div>
+
+  </div>
+
+  <!-- FLAGS TAB -->
+  <div class="section" id="flags">
+    <p class="section-title">Green Flags & Red Flags</p>
+    <p class="section-sub">A quick-reference guide for Amanda to use during and after interviews. Trust your instincts — but use this list to back them up.</p>
+
+    <div class="blurred-section">
+    <h3 style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--green);margin-bottom:16px;">✅ Green Flags — Signs of a Great Hire</h3>
+    <div class="rf-grid">
+      <div class="gf-card"><h4>Brings a Portfolio Unprompted</h4><p>They didn't wait to be asked — they came ready to show their work. That level of preparation says everything.</p></div>
+      <div class="gf-card"><h4>Asks About Your Clients</h4><p>A candidate who asks "what's your typical client like?" is already thinking about fit, not just a paycheque.</p></div>
+      <div class="gf-card"><h4>Specific About Sanitation</h4><p>They name products, processes, and contact times without being prompted. This protects you legally and your clients physically.</p></div>
+      <div class="gf-card"><h4>Speaks Positively About Past Workplaces</h4><p>Even if they left on hard terms, a professional candidate talks about what they learned — not what went wrong.</p></div>
+      <div class="gf-card"><h4>Actively Learning Outside Work</h4><p>Courses, tutorials, social media practice — they invest their own time into getting better. That's rare and valuable.</p></div>
+      <div class="gf-card"><h4>Comfortable with Client Redos</h4><p>They've had an unhappy client and handled it gracefully. No ego, just resolution. That's a service professional.</p></div>
+    </div>
+
+    <div class="divider"></div>
+    <h3 style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--red);margin-bottom:16px;">🚩 Red Flags — Walk Away</h3>
+    <div class="rf-grid">
+      <div class="rf-card"><h4>Cannot Provide Certification</h4><p>In Ontario, practising without a valid licence is illegal and puts your business at serious risk. No exceptions.</p></div>
+      <div class="rf-card"><h4>Blames Clients for Complaints</h4><p>If they can't take accountability in an interview, they won't take it in front of your clients either.</p></div>
+      <div class="rf-card"><h4>Vague or Evasive About Past Jobs</h4><p>"It just wasn't a good fit" for every single past employer is a pattern, not bad luck.</p></div>
+      <div class="rf-card"><h4>Dismissive of Sanitation Questions</h4><p>One infection complaint can damage your reputation permanently in a small city like North Bay. Don't risk it.</p></div>
+      <div class="rf-card"><h4>First Questions Are About Pay & Days Off</h4><p>Compensation matters — but leading with it before understanding the role signals the wrong priorities.</p></div>
+      <div class="rf-card"><h4>No Portfolio & No Explanation</h4><p>Any experienced nail tech has photos of their work somewhere. No portfolio with no reason is a significant gap.</p></div>
+    </div>
+
+    <div class="divider"></div>
+    <div style="background:var(--deep);border-radius:14px;padding:24px 28px;color:#fff;">
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--blush);margin-bottom:12px;">💡 Amanda's Hiring Tip</h3>
+      <p style="font-size:14px;line-height:1.7;color:rgba(255,255,255,0.75);">Consider doing a short paid <strong style="color:#fff;">practical trial</strong> of 2–3 hours before making a final offer. Ask the candidate to perform a gel manicure on a willing model (a friend, family member, or yourself). You'll see their technique, their communication with the client, their station hygiene, and their confidence under light observation — all things an interview alone can't reveal.</p>
+    </div>
+    </div><!-- end blurred flags -->
+
+    <div class="lock-overlay"><div class="lock-overlay-inner">
+      <div class="lock-icon">🔒</div>
+      <div class="lock-title">Green & Red Flags Guide Locked</div>
+      <div class="lock-sub">6 green flags and 6 red flags with detailed explanations, plus a bonus hiring tip — all tailored specifically for BeYOUtiful Nails 705.</div>
+    </div></div>
+
+  </div>
+
+</main>
+
+<script>
+  function showTab(id, btn) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    btn.classList.add('active');
+  }
+  function toggleQ(card) {
+    card.classList.toggle('open');
+  }
+
+  // Disable right-click
+  document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+  // Disable keyboard shortcuts for copy/save/print
+  document.addEventListener('keydown', function(e) {
+    if ((e.ctrlKey || e.metaKey) && (e.key === 'c' || e.key === 'C' || e.key === 's' || e.key === 'S' || e.key === 'p' || e.key === 'P' || e.key === 'u' || e.key === 'U' || e.key === 'a' || e.key === 'A')) {
+      e.preventDefault();
+    }
+    if (e.key === 'F12' || e.key === 'PrintScreen') { e.preventDefault(); }
+  });
+  // Disable drag
+  document.addEventListener('dragstart', function(e) { e.preventDefault(); });
+</script>
+</body>
+</html>
